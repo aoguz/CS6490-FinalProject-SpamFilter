@@ -11,11 +11,11 @@ class feature_extractor:
     def extract(self, email_iterator, output_file, is_spam):
         with open(output_file, 'w') as f:
             for email in email_iterator: 
-                feature_vec = [0]*len(self.features)
+                feature_vec = [0.0]*len(self.features)
                 for i in range(len(self.features)):
                     if " " + self.features[i] + " " in email.lower():
-                        feature_vec[i] = 1
-                f.write(str(feature_vec) + " " + str(is_spam) + "\n")
+                        feature_vec[i] = 1.0
+                f.write(str(feature_vec + [(1.0 if is_spam else 0.0)]) + "\n")
 
 features = ['free', 
             'unsubscribe', 
@@ -23,5 +23,7 @@ features = ['free',
             'won', 
             'winner']
 f = feature_extractor(features)
-e = email_iter('enron1/ham')
-f.extract(e, 'features/features_ham.txt', False)
+e_ham = email_iter('enron1/ham')
+e_spam = email_iter('enron1/spam')
+f.extract(e_ham, 'features/features_ham.txt', False)
+f.extract(e_spam, 'features/features_spam.txt', True)
