@@ -16,12 +16,30 @@ class feature_extractor:
                     if " " + self.features[i] + " " in email.lower():
                         feature_vec[i] = 1.0
                 f.write(str(feature_vec + [(1.0 if is_spam else 0.0)]) + "\n")
-
 features = ['free', 
             'unsubscribe', 
             'news', 
             'won', 
-            'winner']
+            'winner', 
+			'viagra',
+			'sex', 
+			'milf', 
+			'fuck',
+			'toy', 
+			'bigger', 
+			'desperate',
+			'single',
+			'miles',
+			'tonight',
+			'immigration',
+			'gratz',
+			'blessed']
+'''
+features = ['free', 
+            'unsubscribe', 
+            'news', 
+            'won', 
+            'winner']'''
 f = feature_extractor(features)
 e_ham = email_iter('enron1/ham')
 e_spam = email_iter('enron1/spam')

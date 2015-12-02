@@ -27,6 +27,7 @@ def get_data(ratio = 0.5):
         'test_set':
             {
                 'examples': [[feature1, feature2, ...],[feature1, feature2, ...], ...]
+                'labels'  : [label1, label2, ...]
             }
         'training_set:
             {
@@ -36,7 +37,7 @@ def get_data(ratio = 0.5):
     }
     '''
     #max number of examples to use from each file
-    max_ex = 2
+    max_ex = 1000
     ham_list  = load_raw(ham_filename, max_ex)  
     spam_list = load_raw(spam_filename, max_ex)
     all_examples = ham_list
@@ -46,11 +47,13 @@ def get_data(ratio = 0.5):
     training_set    = [all_examples[i][:-1] for i in range(0,len_training_set)]
     training_labels = [all_examples[i][-1]  for i in range(0,len_training_set)]
     test_set        = [all_examples[i][:-1] for i in range(len_training_set,len(all_examples))]
+    test_labels     = [all_examples[i][-1]  for i in range(len_training_set, len(all_examples))]
     
     return {
                 'test_set':
                     {
-                        'examples': test_set
+                        'examples': test_set,
+                        'labels'  : test_labels
                     },
                 'training_set':
                     {
