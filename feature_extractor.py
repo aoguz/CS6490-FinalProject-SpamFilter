@@ -17,23 +17,34 @@ class feature_extractor:
                         feature_vec[i] = 1.0
                 f.write(str(feature_vec + [(1.0 if is_spam else 0.0)]) + "\n")
 features = ['free', 
+            'cheap',
             'unsubscribe', 
+            'quality',
+            'http',
+            'medicine',
+            '$',
+            'shopping',
+            'special',
+            'deal',
+            'subscribe', 
+            'month',
             'news', 
             'won', 
+            'reliable'
             'winner', 
 			'viagra',
+            'save',
 			'sex', 
 			'milf', 
-			'fuck',
-			'toy', 
-			'bigger', 
+            'buy',
+            'book',
+			'visit us', 
+                        'click here'
+			'marketing', 
+            'celebs',
+            'celebrities',
 			'desperate',
-			'single',
-			'miles',
-			'tonight',
-			'immigration',
-			'gratz',
-			'blessed']
+			'single']
 '''
 features = ['free', 
             'unsubscribe', 

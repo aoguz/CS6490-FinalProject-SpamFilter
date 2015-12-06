@@ -20,7 +20,8 @@ def load_raw(filename, max_ex):
 
 
 #ratio indicates the proportion of data in the training set vs the test set
-def get_data(ratio = 0.5):
+#files represents which files to get the raw features from. These examples are shuffled together
+def get_data(ratio = 0.5, files = []):
     '''
     returns data in following format
     {
@@ -37,11 +38,10 @@ def get_data(ratio = 0.5):
     }
     '''
     #max number of examples to use from each file
-    max_ex = 1000
-    ham_list  = load_raw(ham_filename, max_ex)  
-    spam_list = load_raw(spam_filename, max_ex)
-    all_examples = ham_list
-    all_examples.extend(spam_list)
+    max_ex = 1500
+    all_examples = []
+    for filename in files:
+        all_examples.extend(load_raw(filename, max_ex))
     random.shuffle(all_examples)
     len_training_set = int(float(len(all_examples)) * ratio)
     training_set    = [all_examples[i][:-1] for i in range(0,len_training_set)]
@@ -61,5 +61,3 @@ def get_data(ratio = 0.5):
                         'labels'  : training_labels
                     } 
             }
-
-print get_data()
