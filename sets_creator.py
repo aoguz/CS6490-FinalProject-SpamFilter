@@ -21,7 +21,8 @@ def load_raw(filename, max_ex):
 
 #ratio indicates the proportion of data in the training set vs the test set
 #files represents which files to get the raw features from. These examples are shuffled together
-def get_data(ratio = 0.5, files = []):
+#max_ex is the max number of examples to use from each file
+def get_data(ratio = 0.5, files = [], max_ex = 1500):
     '''
     returns data in following format
     {
@@ -37,17 +38,15 @@ def get_data(ratio = 0.5, files = []):
             } 
     }
     '''
-    #max number of examples to use from each file
-    max_ex = 1500
     all_examples = []
     for filename in files:
         all_examples.extend(load_raw(filename, max_ex))
     random.shuffle(all_examples)
     len_training_set = int(float(len(all_examples)) * ratio)
-    training_set    = [all_examples[i][:-1] for i in range(0,len_training_set)]
-    training_labels = [all_examples[i][-1]  for i in range(0,len_training_set)]
-    test_set        = [all_examples[i][:-1] for i in range(len_training_set,len(all_examples))]
-    test_labels     = [all_examples[i][-1]  for i in range(len_training_set, len(all_examples))]
+    training_set     = [all_examples[i][:-1] for i in range(0,len_training_set)]
+    training_labels  = [all_examples[i][-1]  for i in range(0,len_training_set)]
+    test_set         = [all_examples[i][:-1] for i in range(len_training_set,len(all_examples))]
+    test_labels      = [all_examples[i][-1]  for i in range(len_training_set, len(all_examples))]
     
     return {
                 'test_set':

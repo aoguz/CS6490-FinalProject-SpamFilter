@@ -8,7 +8,7 @@ num_trees = 15
 
 features_filename = 'features/forest_features.txt'
 
-data_sets = sets_creator.get_data(files = ['features/features_spam.txt', 'features/features_ham.txt'])
+data_sets = sets_creator.get_data(files = ['features/features_spam.txt', 'features/features_ham.txt'], max_ex = 12500)
 
 def write_features(filename, predictions, labels):
     with open(filename, 'w') as f:
@@ -32,8 +32,6 @@ def generate_forest():
         prediction_mat.append(generate_results(algo, data_sets))
     prediction_mat = transpose(prediction_mat)
     return prediction_mat
-    '''for i in range(len(prediction_mat)):
-        print str(prediction_mat[i]) + ' ' +  str( data_sets['test_set']['labels'][i])'''
 
 
 predictions = generate_forest()
