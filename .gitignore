@@ -1,2 +1,7 @@
 enron1
 *.pyc
+images
+*.log
+*.aux
+*.blg
+*.bbl

@@ -4,7 +4,7 @@ from result_producer import *
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.cross_validation import cross_val_score
 
-num_trees = 15
+num_trees = 1
 
 features_filename = 'features/forest_features.txt'
 
@@ -38,3 +38,4 @@ predictions = generate_forest()
 write_features(features_filename, predictions, data_sets['test_set']['labels'])
 
 #random_forest()
+generate_forest()
