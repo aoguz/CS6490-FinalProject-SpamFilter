@@ -1,25 +1,26 @@
 \section{Adversary Model}
                     
 
-A prototype adversary model can be defined as a person or a group who intend to send spam e mails to a large amount of users. The purpose of the adversary, might be profit based by using commercial and advertisement spamming, getting reputation by his blog/website to be visited or it might be based on malicious purpose as the spam e mail might include malware (malicious software) in e mail content. 
+A prototype adversary model can be defined as a person or a group who intends to send spam e-mails to a large amount of users. The purpose of the adversary, might be profit based by using commercial and advertisement spamming, getting reputation by their blog/website to be visited or it might be based on a malicious purpose as the spam e-mail might include malware (malicious software) in e-mail content. 
 
-The adversary aims to get the users open/click on corresponding links in spam emails. There are some common techniques which is based on creating appealing statements in e-mails. 
-1-) Appealing Statements : can be given as sending spams that claim the user won a prize, special deals in products or creating a fake "Dating" statement. It is important to note that, the spams might try to trick the users into sharing personal information such as credit card parameters or passwords. The image below represents the most words that are used in spam e mails. 
+The adversary aims to get the users to open/click on corresponding links in spam emails. There are some common techniques which are based on creating appealing statements in e-mails. 
 
-2-) Mail Bombing : The adversary is also able to include various types of malware links which potentially causes malfunctioning in victim's computers. The adversary is able to use specific software called “mail bombing or "e-mail bombing", which replicates the same e mail by devastating amounts, which might take a huge portion of user's mailbox. 
+1-) Appealing Statements : can be given as sending spam that claim the user won a prize, special deals in products or creating a fake "Dating" statement. It is important to note that, the spam might try to trick the users into sharing personal information such as credit card parameters or passwords.
 
-3-) Mixing characters/numerical :In terms of avoiding the filtering, there are common techniques which aims to trick the filter to classify the spam e mail as "not spam". Some of the methods are, adding alphanumerical strings in order to get the word out of the spam classification, such as"fr3e pr1ze for you" or "you won a free 1pad";however this method has become avoidable with pattern recognition techniques
+2-) Mail Bombing : The adversary is also able to include various types of malware links which potentially causes malfunctioning in victim's computers. The adversary is able to use specific software called “mail bombing or "e-mail bombing", which replicates the same e-mail by devastating amounts, which might take a huge portion of user's mailbox. 
 
-4-) Taking advantage of global company names: Another methodology is based on tricking the user into clicking on a link, which makes the user thinking to clicking on a "facebook" link. One example can be given as sending an e mail saying that "authenticate your "Facebook" profile by clicking on this link "jk.facebook.gg"
+3-) Mixing characters/numerical: In terms of avoiding the filtering, there are common techniques which aim to trick the filter to classify the spam e-mail as "not spam". Some of the methods are, adding alphanumerical strings in order to get the word out of the spam classification, such as"fr3e pr1ze for you" or "you won a free 1pad";however this method has become avoidable with pattern recognition techniques.
 
-5-) Embedding images on e mail content : By tricking the user, the adversary is able to add the .jpg .png or gif files, which might potentially contains inappropriate content. This method can be avoided by filtering the image extensions in  our spam filtering once the e mail is identified as spam.
+4-) Taking advantage of global company names: Another methodology is based on tricking the user into clicking on a link. One example can be given as sending an e-mail saying, "authenticate your 'Facebook' profile by clicking on this link 'jk.facebook.gg'``.
 
-6-) Faking URL : The adversary might fake the url, which is based on leading an user to a different site than it appears on the e mail. The hyperlink which addresses to the website can be modified as anything; however, the actual link address might be deceiving. In order to avoid this situation, it is advisable to check the hyperlink, such as whether the hyperlink indicated as Amazon website really leads to the Amazon or not. By filtering the URL, the spam filter would be able to solve the problem. 
+5-) Embedding images on e-mail content : By tricking the user, the adversary is able to add the .jpg .png or gif files, which might potentially contain inappropriate content. This method can be avoided by filtering the image extensions in  our spam filter once the e-mail is identified as spam.
 
-7-) URL Hiding : There are numerous ways to represent a URL for an adversary to embed it into his spam, such as :
-Numerical IP address encoding: http://3329460759/ 
-Hex IP : http://x6778a26/ 
-Hex URL : http://%99%99%99pro%99%45s%73%2ecom
+6-) Faking URL: The adversary might fake the url, which leads a user to a different site than it appears on the e-mail. The hyperlink to the website can be modified as anything; however, the actual link address might be deceiving. In order to avoid this situation, it is advisable to check the hyperlink, such as whether the hyperlink indicated as something like an Amazon website really leads to Amazon or not. By filtering the URL, the spam filter would be able to solve the problem. 
+
+7-) URL Hiding: There are numerous ways to represent a URL for an adversary to embed it into their spam, such as: \newline
+Numerical IP address encoding: http://3329460759/ \newline
+Hex IP: http://x6778a26/ \newline
+Hex URL: http://\%99\%99\%99pro\%99\%45s\%73\%2ecom \newline
 
 However, it is important to note that there is a common attribute of all of the listed hidden URL’s, which is “http” and our filtering mechanism is able to recognize this pattern as a spam category. 
 
