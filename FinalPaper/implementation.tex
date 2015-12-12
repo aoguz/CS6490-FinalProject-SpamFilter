@@ -1,6 +1,4 @@
 \section{Design And Implementation}
-The project was implemented entirely in Python and can be found in a public Github \cite{projectCode}. For machine learning, the sklearn library \cite{sklearn} was used. This library supports numerous machine learning algorithms. We chose to use the Enron Email Dataset \cite{enron} for both our training and test set. We selected 12,000 spam emails and 12,000 ham emails from this set for training and testing. 
-
 The first step to using almost any supervised learning algorithm is feature selection. We decided early on to use the ``bag of words'' approach to feature selection. In other words, we created a text file of features (words). The occurrence of each feature was counted in each email and recorded into a feature vector for that email. The feature vectors along with their labels (spam or ham) were then all stored in files for later use so that they wouldn't have to be recomputed. Our feature selection was primarily manual in the sense that we added words into the features list that we though might occur in a spam email. We also made the observation that in some spam emails, the word ``free'' might be spelled correctly, or it could have one of the following spellings: ``fr33'', ``fre3'', or ``fr3e''. To avoid overfitting (where there are too many features to get good results), we decided to make these different situations all the same feature. We achieved this by allowing the user to specify a regular expression that corresponds to a feature. For the situation listed above, the feature entry looks as follows: 
 $$fr[3e]\{2\}$$
 We have not seen this approach in related work and feel it is useful in avoiding overfitting although we have not performed an extensive analysis to determine if this is the case. Once the features were extracted, we would shuffle them up before passing them to any learning algorithm. We also constructed the data so that 50\% was training data and 50\% was test data.
@@ -14,7 +12,7 @@ The last algorithm we tried was AdaBoost. In particular, we used an ensemble of 
 \section{Results}
 The results from SVM cross validation are shown in Table \ref{svm-cross-val}. The highest accuracy was obtained when C was 1000 and $\gamma$ was 0.1.
 
-\begin{table}[hp]
+\begin{table}[!hp]
 \centering
 \caption{SVM Cross-Validation Accuracies}
 \label{svm-cross-val}
@@ -29,7 +27,7 @@ $\gamma$=0.1    & 86\%  & 87\%   & 87\%    & 87\%     \\ \hline
 \end{table}
 
 The results from a decision tree classifier with a maximum depth of 10 is shown in Table \ref{decision-tree-acc}.
-\begin{table}[hp]
+\begin{table}[!hp]
 \centering
 \caption{Decision Tree Prediction Accuracies}
 \label{decision-tree-acc}
